@@ -34,7 +34,7 @@
         .custom-alert {
             z-index: 100;
         }
-        /* Style for the button */
+        /* Style untuk tombol */
         .lihat-nilai-btn {
             background-color: #22c55e; /* green-500 */
             color: white;
@@ -53,7 +53,7 @@
             cursor: not-allowed;
         }
         
-        /* Style for the table */
+        /* Style untuk tabel */
         .grade-table-container {
             overflow-x: auto;
         }
@@ -124,7 +124,7 @@
     </div>
 
     <script>
-        // --- Data Model: Data Siswa dan Nilai ---
+        // Data Model: Data Siswa dan Nilai
         // Data ini telah diperbarui dari file CSV lengkap yang Anda berikan.
         const students = [
             { nis: '1120', name: 'ABDUL QODIR MUHAMMAD' },
@@ -195,310 +195,89 @@
             { nis: '1125', name: 'MUHAMMAD KEEFANO AL-FATIH PRATAMA' },
             { nis: '1074', name: 'MUHAMMAD RIFQI FAHREZI' },
             { nis: '1064', name: 'MUHAMMAD SAIF' },
-            { nis: '1129', name: 'MUHAMMAD NAJIB AZKADINA' },
-            { nis: '1109', name: 'MUHAMMAD FARHAN AZZAHID' },
-            { nis: '1112', name: 'HAJAR ASWAD' },
-            { nis: '1086', name: 'HANUM MAUDY ALKAFF' },
-            { nis: '1108', name: 'IRFAN DZIKRI PRATAMA' },
-            { nis: '1076', name: 'KEISHA ALYA WAHYUDI' },
-            { nis: '1090', name: 'KHAYRA AZZAHRA' },
-            { nis: '1118', name: 'KHAIRUNNISA NAJLA' },
-            { nis: '1107', name: 'KHALIFAH JASMINE SHIDQI' },
-            { nis: '1113', name: 'KHALIL ANIES PUTRA' },
-            { nis: '1096', name: 'KHANZA ADISTI ALMAIRA' },
-            { nis: '1075', name: 'KRISNA ARYA PRADIPTA' },
-            { nis: '1115', name: 'LAILA NAJWA SAUSAN' },
-            { nis: '1079', name: 'MARITZA ZAHIRA ARTHARIAN' },
-            { nis: '1088', name: 'MUHAMMAD ALDY ARSYAD' },
-            { nis: '1071', name: 'MUHAMMAD ALFARIZI' },
-            { nis: '1122', name: 'MUHAMMAD ALTHAF AZZAHWAN' },
-            { nis: '1077', name: 'MUHAMMAD ARKAN' },
-            { nis: '1102', name: 'MUHAMMAD AZKA' },
-            { nis: '1119', name: 'MUHAMMAD FAIZ ZAKARIA' },
-            { nis: '1110', name: 'MUHAMMAD FATHIR FAHRIZAL' },
-            { nis: '1066', name: 'MUHAMMAD FAHREZI PUTRA PAMUNGKAS' },
-            { nis: '1081', name: 'MUHAMMAD FIKRI SYAH PUTRA' },
-            { nis: '1068', name: 'MUHAMMAD HAFIDZ AFIFI' },
-            { nis: '1091', name: 'MUHAMMAD HAMDAN NURSYAHBANI' },
-            { nis: '1073', name: 'MUHAMMAD NAUFAL' },
-            { nis: '1083', name: 'MUHAMMAD RAFIQI' },
-            { nis: '1103', name: 'MUHAMMAD RAFISYAH ALMUBARAK' },
-            { nis: '1072', name: 'MUHAMMAD RAFI KHALIS' },
-            { nis: '1114', name: 'MUHAMMAD RASYID' },
-            { nis: '1094', name: 'MUHAMMAD ZULFIKAR AZKA PRATAMA' },
-            { nis: '1089', name: 'NADHIRA E GA PUTRI FARDANA' },
-            { nis: '1080', name: 'NAILAH SALSABILA AZZAHRA' },
-            { nis: '1111', name: 'NAJWA AURELIA PUTRI' },
-            { nis: '1101', name: 'NAYLA HANIYYA' },
-            { nis: '1082', name: 'NEZHA AQILLA' },
-            { nis: '1078', name: 'NUR MUHAMMAD ALAMSYAH' },
-            { nis: '1123', name: 'OKY PRABOWO' },
-            { nis: '1062', name: 'RAIHAN GADING SATRIA' },
-            { nis: '1106', name: 'MUHAMMAD ZHAFRAN MAULANA' },
-            { nis: '1087', name: 'NADHIRA EGA PUTRI FARDANA' },
-            { nis: '1084', name: 'NABILA PUTRI ADIYANTO' },
-            { nis: '1092', name: 'MUHAMMAD AHZA DANISH FAHREZA' },
-            { nis: '1124', name: 'KIRANA HANANIA ZULFARIYANTO' },
-            { nis: '1104', name: 'MUHAMMAD AZHAR AFANDI' },
-            { nis: '1125', name: 'MUHAMMAD KEEFANO AL-FATIH PRATAMA' },
-            { nis: '1074', name: 'MUHAMMAD RIFQI FAHREZI' },
-            { nis: '1064', name: 'MUHAMMAD SAIF' },
             { nis: '1130', name: 'SYAKIRA ADISTY' },
             { nis: '1060', name: 'KIANDRA ZEVANNA ARSY' }
         ];
 
-        const formatifGrades = {
-            '1120': [95, 100, 100, 100],
-            '1100': [100, 75, 100, 75],
-            '1126': [100, 95, 100, 100],
-            '1069': [90, 80, 85, 80],
-            '1128': [95, 100, 90, 80],
-            '1085': [90, 95, 90, 80],
-            '1127': [80, 85, 90, 75],
-            '1097': [100, 90, 100, 95],
-            '1105': [80, 85, 95, 90],
-            '1067': [100, 100, 100, 95],
-            '1093': [90, 90, 85, 85],
-            '1099': [85, 80, 85, 75],
-            '1063': [95, 95, 90, 85],
-            '1116': [100, 95, 100, 95],
-            '1133': [95, 80, 90, 80],
-            '1095': [85, 80, 90, 80],
-            '1070': [90, 85, 100, 85],
-            '1098': [95, 90, 100, 90],
-            '1065': [95, 80, 90, 80],
-            '1117': [100, 90, 95, 85],
-            '1121': [90, 85, 90, 80],
-            '1109': [85, 80, 85, 80],
-            '1112': [90, 95, 100, 90],
-            '1086': [95, 90, 95, 80],
-            '1108': [90, 95, 90, 85],
-            '1076': [95, 90, 95, 80],
-            '1090': [100, 95, 100, 100],
-            '1118': [90, 95, 90, 85],
-            '1107': [100, 100, 100, 100],
-            '1113': [90, 85, 95, 80],
-            '1096': [95, 90, 100, 90],
-            '1075': [85, 80, 85, 80],
-            '1115': [95, 95, 100, 95],
-            '1079': [100, 90, 100, 90],
-            '1088': [90, 85, 90, 85],
-            '1071': [95, 90, 90, 85],
-            '1122': [100, 95, 100, 95],
-            '1077': [95, 90, 95, 85],
-            '1102': [100, 90, 100, 90],
-            '1119': [95, 95, 100, 90],
-            '1110': [90, 85, 90, 85],
-            '1066': [85, 80, 95, 85],
-            '1081': [90, 95, 90, 80],
-            '1068': [95, 80, 90, 80],
-            '1091': [100, 90, 100, 100],
-            '1073': [85, 80, 90, 80],
-            '1083': [95, 90, 100, 90],
-            '1103': [100, 95, 100, 90],
-            '1072': [95, 95, 100, 95],
-            '1114': [90, 85, 90, 80],
-            '1094': [85, 80, 85, 75],
-            '1089': [100, 95, 100, 95],
-            '1080': [90, 85, 90, 85],
-            '1111': [100, 95, 100, 90],
-            '1101': [90, 85, 90, 85],
-            '1082': [95, 90, 100, 95],
-            '1078': [85, 80, 90, 75],
-            '1123': [90, 85, 90, 80],
-            '1062': [100, 95, 100, 90],
-            '1106': [100, 90, 100, 100],
-            '1087': [100, 95, 100, 95],
-            '1084': [100, 90, 100, 95],
-            '1092': [95, 85, 90, 85],
-            '1124': [80, 80, 100, 75],
-            '1104': [80, 95, 90, 75],
-            '1125': [100, 100, 100, 100],
-            '1074': [90, 85, 100, 85],
-            '1064': [85, 80, 85, 75],
-            '1129': [100, 95, 100, 90],
-            '1109': [95, 95, 90, 85],
-            '1112': [90, 95, 100, 90],
-            '1086': [95, 90, 95, 80],
-            '1108': [90, 95, 90, 85],
-            '1076': [95, 90, 95, 80],
-            '1090': [100, 95, 100, 100],
-            '1118': [90, 95, 90, 85],
-            '1107': [100, 100, 100, 100],
-            '1113': [90, 85, 95, 80],
-            '1096': [95, 90, 100, 90],
-            '1075': [85, 80, 85, 80],
-            '1115': [95, 95, 100, 95],
-            '1079': [100, 90, 100, 90],
-            '1088': [90, 85, 90, 85],
-            '1071': [95, 90, 90, 85],
-            '1122': [100, 95, 100, 95],
-            '1077': [95, 90, 95, 85],
-            '1102': [100, 90, 100, 90],
-            '1119': [95, 95, 100, 90],
-            '1110': [90, 85, 90, 85],
-            '1066': [85, 80, 95, 85],
-            '1081': [90, 95, 90, 80],
-            '1068': [95, 80, 90, 80],
-            '1091': [100, 90, 100, 100],
-            '1073': [85, 80, 90, 80],
-            '1083': [95, 90, 100, 90],
-            '1103': [100, 95, 100, 90],
-            '1072': [95, 95, 100, 95],
-            '1114': [90, 85, 90, 80],
-            '1094': [85, 80, 85, 75],
-            '1089': [100, 95, 100, 95],
-            '1080': [90, 85, 90, 85],
-            '1111': [100, 95, 100, 90],
-            '1101': [90, 85, 90, 85],
-            '1082': [95, 90, 100, 95],
-            '1078': [85, 80, 90, 75],
-            '1123': [90, 85, 90, 80],
-            '1062': [100, 95, 100, 90],
-            '1106': [100, 90, 100, 100],
-            '1087': [100, 95, 100, 95],
-            '1084': [100, 90, 100, 95],
-            '1092': [95, 85, 90, 85],
-            '1124': [80, 80, 100, 75],
-            '1104': [80, 95, 90, 75],
-            '1125': [100, 100, 100, 100],
-            '1074': [90, 85, 100, 85],
-            '1064': [85, 80, 85, 75],
-            '1130': [90, 80, 90, 80],
-            '1060': [100, 100, 100, 100]
+        // Data nilai formatif dan sumatif berdasarkan NIS
+        const grades = {
+            '1120': { formatif: [95, 100, 100, 100], sumatif: [100] },
+            '1100': { formatif: [100, 75, 100, 75], sumatif: [98] },
+            '1126': { formatif: [100, 95, 100, 100], sumatif: [100] },
+            '1069': { formatif: [90, 80, 85, 80], sumatif: [94] },
+            '1128': { formatif: [95, 100, 90, 80], sumatif: [98] },
+            '1085': { formatif: [90, 95, 90, 80], sumatif: [98] },
+            '1127': { formatif: [80, 85, 90, 75], sumatif: [88] },
+            '1097': { formatif: [100, 90, 100, 95], sumatif: [98] },
+            '1105': { formatif: [80, 85, 95, 90], sumatif: [88] },
+            '1067': { formatif: [100, 100, 100, 95], sumatif: [100] },
+            '1093': { formatif: [90, 90, 85, 85], sumatif: [96] },
+            '1099': { formatif: [85, 80, 85, 75], sumatif: [88] },
+            '1063': { formatif: [95, 95, 90, 85], sumatif: [98] },
+            '1116': { formatif: [100, 95, 100, 95], sumatif: [100] },
+            '1133': { formatif: [95, 80, 90, 80], sumatif: [96] },
+            '1095': { formatif: [85, 80, 90, 80], sumatif: [94] },
+            '1070': { formatif: [90, 85, 100, 85], sumatif: [96] },
+            '1098': { formatif: [95, 90, 100, 90], sumatif: [98] },
+            '1065': { formatif: [95, 80, 90, 80], sumatif: [96] },
+            '1117': { formatif: [100, 90, 95, 85], sumatif: [98] },
+            '1121': { formatif: [90, 85, 90, 80], sumatif: [96] },
+            '1109': { formatif: [85, 80, 85, 80], sumatif: [94] },
+            '1112': { formatif: [90, 95, 100, 90], sumatif: [98] },
+            '1086': { formatif: [95, 90, 95, 80], sumatif: [98] },
+            '1108': { formatif: [90, 95, 90, 85], sumatif: [96] },
+            '1076': { formatif: [95, 90, 95, 80], sumatif: [98] },
+            '1090': { formatif: [100, 95, 100, 100], sumatif: [100] },
+            '1118': { formatif: [90, 95, 90, 85], sumatif: [96] },
+            '1107': { formatif: [100, 100, 100, 100], sumatif: [100] },
+            '1113': { formatif: [90, 85, 95, 80], sumatif: [96] },
+            '1096': { formatif: [95, 90, 100, 90], sumatif: [98] },
+            '1075': { formatif: [85, 80, 85, 80], sumatif: [94] },
+            '1115': { formatif: [95, 95, 100, 95], sumatif: [100] },
+            '1079': { formatif: [100, 90, 100, 90], sumatif: [98] },
+            '1088': { formatif: [90, 85, 90, 85], sumatif: [96] },
+            '1071': { formatif: [95, 90, 90, 85], sumatif: [98] },
+            '1122': { formatif: [100, 95, 100, 95], sumatif: [100] },
+            '1077': { formatif: [95, 90, 95, 85], sumatif: [98] },
+            '1102': { formatif: [100, 90, 100, 90], sumatif: [98] },
+            '1119': { formatif: [95, 95, 100, 90], sumatif: [100] },
+            '1110': { formatif: [90, 85, 90, 85], sumatif: [96] },
+            '1066': { formatif: [85, 80, 95, 85], sumatif: [94] },
+            '1081': { formatif: [90, 95, 90, 80], sumatif: [96] },
+            '1068': { formatif: [95, 80, 90, 80], sumatif: [96] },
+            '1091': { formatif: [100, 90, 100, 100], sumatif: [100] },
+            '1073': { formatif: [85, 80, 90, 80], sumatif: [94] },
+            '1083': { formatif: [95, 90, 100, 90], sumatif: [98] },
+            '1103': { formatif: [100, 95, 100, 90], sumatif: [100] },
+            '1072': { formatif: [95, 95, 100, 95], sumatif: [100] },
+            '1114': { formatif: [90, 85, 90, 80], sumatif: [96] },
+            '1094': { formatif: [85, 80, 85, 75], sumatif: [94] },
+            '1089': { formatif: [100, 95, 100, 95], sumatif: [100] },
+            '1080': { formatif: [90, 85, 90, 85], sumatif: [96] },
+            '1111': { formatif: [100, 95, 100, 90], sumatif: [100] },
+            '1101': { formatif: [90, 85, 90, 85], sumatif: [96] },
+            '1082': { formatif: [95, 90, 100, 95], sumatif: [98] },
+            '1078': { formatif: [85, 80, 90, 75], sumatif: [93] },
+            '1123': { formatif: [90, 85, 90, 80], sumatif: [96] },
+            '1062': { formatif: [100, 95, 100, 90], sumatif: [98] },
+            '1106': { formatif: [100, 90, 100, 100], sumatif: [100] },
+            '1087': { formatif: [100, 95, 100, 95], sumatif: [100] },
+            '1084': { formatif: [100, 90, 100, 90], sumatif: [98] },
+            '1092': { formatif: [95, 85, 90, 85], sumatif: [98] },
+            '1124': { formatif: [80, 80, 100, 75], sumatif: [93] },
+            '1104': { formatif: [80, 95, 90, 75], sumatif: [88] },
+            '1125': { formatif: [100, 100, 100, 100], sumatif: [100] },
+            '1074': { formatif: [90, 85, 100, 85], sumatif: [96] },
+            '1064': { formatif: [95, 90, 90, 85], sumatif: [98] },
+            '1130': { formatif: [95, 90, 90, 85], sumatif: [96] },
+            '1060': { formatif: [100, 100, 100, 100], sumatif: [96] }
         };
 
-        const sumatifGrades = {
-            '1120': [100],
-            '1100': [98],
-            '1126': [100],
-            '1069': [95],
-            '1128': [95.5],
-            '1085': [90],
-            '1127': [88],
-            '1097': [97.5],
-            '1105': [92.5],
-            '1067': [95],
-            '1093': [90.5],
-            '1099': [81.5],
-            '1063': [98],
-            '1116': [100],
-            '1133': [90.5],
-            '1095': [90.5],
-            '1070': [95.5],
-            '1098': [98.5],
-            '1065': [90.5],
-            '1117': [97.5],
-            '1121': [92.5],
-            '1109': [90.5],
-            '1112': [97.5],
-            '1086': [95.5],
-            '1108': [95],
-            '1076': [95.5],
-            '1090': [100],
-            '1118': [95],
-            '1107': [100],
-            '1113': [92.5],
-            '1096': [97.5],
-            '1075': [90.5],
-            '1115': [100],
-            '1079': [98],
-            '1088': [92.5],
-            '1071': [95],
-            '1122': [100],
-            '1077': [95.5],
-            '1102': [98],
-            '1119': [98.5],
-            '1110': [92.5],
-            '1066': [90.5],
-            '1081': [92.5],
-            '1068': [90.5],
-            '1091': [100],
-            '1073': [90.5],
-            '1083': [98.5],
-            '1103': [97.5],
-            '1072': [100],
-            '1114': [90.5],
-            '1094': [81],
-            '1089': [100],
-            '1080': [92.5],
-            '1111': [98],
-            '1101': [92.5],
-            '1082': [98.5],
-            '1078': [88],
-            '1123': [92.5],
-            '1062': [98.5],
-            '1106': [0],
-            '1087': [95],
-            '1084': [95],
-            '1092': [98],
-            '1124': [92.5],
-            '1104': [88],
-            '1125': [100],
-            '1074': [95.5],
-            '1064': [81],
-            '1129': [98.5],
-            '1109': [90.5],
-            '1112': [97.5],
-            '1086': [95.5],
-            '1108': [95],
-            '1076': [95.5],
-            '1090': [100],
-            '1118': [95],
-            '1107': [100],
-            '1113': [92.5],
-            '1096': [97.5],
-            '1075': [90.5],
-            '1115': [100],
-            '1079': [98],
-            '1088': [92.5],
-            '1071': [95],
-            '1122': [100],
-            '1077': [95.5],
-            '1102': [98],
-            '1119': [98.5],
-            '1110': [92.5],
-            '1066': [90.5],
-            '1081': [92.5],
-            '1068': [90.5],
-            '1091': [100],
-            '1073': [90.5],
-            '1083': [98.5],
-            '1103': [97.5],
-            '1072': [100],
-            '1114': [90.5],
-            '1094': [81],
-            '1089': [100],
-            '1080': [92.5],
-            '1111': [98],
-            '1101': [92.5],
-            '1082': [98.5],
-            '1078': [88],
-            '1123': [92.5],
-            '1062': [98.5],
-            '1106': [0],
-            '1087': [95],
-            '1084': [95],
-            '1092': [98],
-            '1124': [92.5],
-            '1104': [88],
-            '1125': [100],
-            '1074': [95.5],
-            '1064': [81],
-            '1130': [90.5],
-            '1060': [95.5]
-        };
-        
-        // Data keterangan untuk setiap asesmen
-        const formatifDescriptions = [
-            "Membaca dan Menulis Bilangan",
-            "Nilai Angka dan Nilai Tempat Bilangan",
-            "Komposisi dan Dekomposisi Bilangan",
-            "Membandingkan dan Mengurutkan Bilangan"
-        ];
-
-        const sumatifDescriptions = [
-            "BILANGAN CACAH 1"
+        const topics = [
+            'Membaca dan Menulis Bilangan',
+            'Nilai Angka dan Nilai Tempat Bilangan',
+            'Komposisi dan Dekomposisi Bilangan',
+            'Membandingkan dan Mengurutkan Bilangan'
         ];
 
         // --- Elemen DOM ---
@@ -507,76 +286,88 @@
         const lihatNilaiBtn = document.getElementById('lihatNilaiBtn');
         const searchForm = document.getElementById('search-form');
         const gradesView = document.getElementById('grades-view');
+        const studentNameCode = document.getElementById('studentNameCode');
+        const gradeTableContainer = document.getElementById('gradeTableContainer');
         const backBtn = document.getElementById('backBtn');
         const homeBtn = document.getElementById('homeBtn');
         const customAlert = document.getElementById('customAlert');
-        const studentNameCode = document.getElementById('studentNameCode');
-        const gradeTableContainer = document.getElementById('gradeTableContainer');
 
-        // --- Fungsi-fungsi Utama ---
-
+        // --- Fungsi Utama ---
         function searchStudent() {
             const nisn = nisnInput.value.trim();
-            if (!nisn) {
-                showCustomAlert('Silakan masukkan NISN.');
+            if (nisn === '') {
+                showCustomAlert('NISN tidak boleh kosong.');
                 return;
             }
 
             const student = students.find(s => s.nis === nisn);
             if (student) {
+                // Menampilkan nama siswa di form pencarian
                 nameDisplay.value = student.name;
-                lihatNilaiBtn.textContent = 'Lihat Nilai';
-                lihatNilaiBtn.disabled = false;
-                renderGrades(student.nis, student.name);
-                searchForm.classList.add('hidden');
-                gradesView.classList.remove('hidden');
-            } else {
-                nameDisplay.value = 'Siswa tidak ditemukan';
-                showCustomAlert(`Siswa dengan NISN ${nisn} tidak ditemukan.`);
+
+                // Mengganti teks tombol dan menonaktifkan untuk mencegah pencarian duplikat
+                lihatNilaiBtn.textContent = 'Mencari...';
                 lihatNilaiBtn.disabled = true;
+
+                // Menunggu sebentar sebelum beralih tampilan
+                setTimeout(() => {
+                    displayGrades(student.nis, student.name);
+                    lihatNilaiBtn.textContent = 'Lihat Nilai';
+                    lihatNilaiBtn.disabled = false;
+                }, 500);
+
+            } else {
+                showCustomAlert('Data siswa tidak ditemukan.');
+                nameDisplay.value = '';
             }
         }
-        
-        function renderGrades(nis, name) {
-            studentNameCode.textContent = `Nama: ${name} | Kode: ${nis}`;
-            
-            const formatifArray = formatifGrades[nis] || [];
-            const sumatifArray = sumatifGrades[nis] || [];
-            
-            let tableHTML = `<table class="grade-table">`;
-            
-            // Header
-            tableHTML += `<thead><tr>`;
-            tableHTML += `<th rowspan="2">Jenis Nilai</th>`;
-            if (formatifArray.length > 0) {
-                 tableHTML += `<th colspan="${formatifArray.length}">Formatif</th>`;
+
+        function displayGrades(nis, name) {
+            const studentGrades = grades[nis];
+            if (studentGrades) {
+                // Menampilkan nama siswa di halaman nilai
+                studentNameCode.textContent = `${name} (${nis})`;
+                
+                // Menyembunyikan form pencarian dan menampilkan tampilan nilai
+                searchForm.classList.add('hidden');
+                gradesView.classList.remove('hidden');
+
+                generateGradeTable(studentGrades);
+            } else {
+                showCustomAlert('Tidak ada nilai untuk siswa ini.');
+                // Kembali ke tampilan pencarian jika data tidak ditemukan
+                resetToSearch();
             }
-            if (sumatifArray.length > 0) {
-                 tableHTML += `<th colspan="${sumatifArray.length}">Sumatif</th>`;
-            }
-            tableHTML += `</tr><tr>`;
-            formatifArray.forEach((_, i) => tableHTML += `<th>F${i + 1}</th>`);
-            sumatifArray.forEach((_, i) => tableHTML += `<th>S${i + 1}</th>`);
-            tableHTML += `</tr></thead>`;
-            
-            // Body - Keterangan
-            tableHTML += `<tbody><tr class="description-row">`;
-            tableHTML += `<td>Keterangan:</td>`;
-            formatifDescriptions.slice(0, formatifArray.length).forEach(desc => tableHTML += `<td>${desc}</td>`);
-            sumatifDescriptions.slice(0, sumatifArray.length).forEach(desc => tableHTML += `<td>${desc}</td>`);
-            tableHTML += `</tr>`;
-            
-            // Body - Nilai
-            tableHTML += `<tr>`;
-            tableHTML += `<td>Nilai</td>`;
-            formatifArray.forEach(grade => tableHTML += `<td>${grade}</td>`);
-            sumatifArray.forEach(grade => tableHTML += `<td>${grade}</td>`);
-            tableHTML += `</tr></tbody>`;
-            
-            tableHTML += `</table>`;
-            
-            if (formatifArray.length === 0 && sumatifArray.length === 0) {
-                 gradeTableContainer.innerHTML = '<p class="text-center text-gray-500 italic">Belum ada data nilai untuk siswa ini.</p>';
+        }
+
+        function generateGradeTable(studentGrades) {
+            const formatifValues = studentGrades.formatif;
+            const sumatifValue = studentGrades.sumatif[0];
+            const hasFormatif = formatifValues && formatifValues.length > 0;
+
+            let tableHTML = `
+                <table class="grade-table">
+                    <thead>
+                        <tr>
+                            <th colspan="${hasFormatif ? formatifValues.length : 1}">Formatif</th>
+                            <th>Sumatif</th>
+                        </tr>
+                        <tr class="description-row">
+                            ${topics.map(topic => `<td>${topic}</td>`).join('')}
+                            <td>Bilangan Cacah 1</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            ${formatifValues.map(grade => `<td>${grade}</td>`).join('')}
+                            <td>${sumatifValue}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            `;
+
+            if (!hasFormatif) {
+                gradeTableContainer.innerHTML = '<p class="text-gray-500 mt-4">Tidak ada nilai untuk siswa ini.</p>';
             } else {
                 gradeTableContainer.innerHTML = tableHTML;
             }
@@ -617,5 +408,6 @@
         backBtn.addEventListener('click', resetToSearch);
         homeBtn.addEventListener('click', resetToSearch);
     </script>
+
 </body>
 </html>
