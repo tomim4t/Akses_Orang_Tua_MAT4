@@ -34,7 +34,7 @@
         .custom-alert {
             z-index: 100;
         }
-        /* Style untuk tombol */
+        /* Style for the button */
         .lihat-nilai-btn {
             background-color: #22c55e; /* green-500 */
             color: white;
@@ -53,7 +53,7 @@
             cursor: not-allowed;
         }
         
-        /* Style untuk tabel */
+        /* Style for the table */
         .grade-table-container {
             overflow-x: auto;
         }
@@ -124,163 +124,196 @@
     </div>
 
     <script>
-        // Data Model: Data Siswa dan Nilai
-        // Data ini telah diperbarui dari file CSV lengkap yang Anda berikan.
+        // Data Siswa dan Nilai yang sudah diperbarui
         const students = [
             { nis: '1120', name: 'ABDUL QODIR MUHAMMAD' },
             { nis: '1100', name: 'AFRINA MALIKA QUINN' },
             { nis: '1126', name: 'AIDAN RASHAAD SAQEEL WIRAWAN' },
             { nis: '1069', name: 'AISYAH AYUDIA INARA PUTRI' },
-            { nis: '1128', name: 'AKIRA AZKA YUSUF' },
-            { nis: '1085', name: 'ALANNAH NAOMI SAHILA' },
-            { nis: '1127', name: 'ALBIAN ARSYAD WIBOWO' },
-            { nis: '1097', name: 'ALISYA FARA DEBYA' },
-            { nis: '1105', name: 'ANASTASYA ZULFA PUTRI ANINGTYAS' },
-            { nis: '1067', name: 'ANNAQIYAH ASKARU DZAHABIAH' },
-            { nis: '1093', name: 'ARETA SHAKIRA' },
-            { nis: '1099', name: 'AZKIA SABRINA AZHAR' },
-            { nis: '1063', name: 'BENEDICT ARKA FACHRI' },
-            { nis: '1116', name: 'CALISSA AQILLA KAMILA' },
-            { nis: '1133', name: 'CANTIKA ANGGITA SALSABILA' },
-            { nis: '1095', name: 'FAHRI ALFIAN' },
-            { nis: '1070', name: 'FAIZAH AZZAHRA PUTRI' },
-            { nis: '1098', name: 'FARAH ADIBA AZ-ZAHRA' },
-            { nis: '1065', name: 'FATIMAH AZ-ZAHRA' },
-            { nis: '1117', name: 'FATIN NAYLA HURIYA' },
-            { nis: '1121', name: 'GHAISAN ALTHAF RIADY' },
-            { nis: '1109', name: 'GHAISAN ALTHAF RIADY' },
-            { nis: '1112', name: 'HAJAR ASWAD' },
-            { nis: '1086', name: 'HANUM MAUDY ALKAFF' },
-            { nis: '1108', name: 'IRFAN DZIKRI PRATAMA' },
-            { nis: '1076', name: 'KEISHA ALYA WAHYUDI' },
-            { nis: '1090', name: 'KHAYRA AZZAHRA' },
-            { nis: '1118', name: 'KHAIRUNNISA NAJLA' },
-            { nis: '1107', name: 'KHALIFAH JASMINE SHIDQI' },
-            { nis: '1113', name: 'KHALIL ANIES PUTRA' },
-            { nis: '1096', name: 'KHANZA ADISTI ALMAIRA' },
-            { nis: '1075', name: 'KRISNA ARYA PRADIPTA' },
-            { nis: '1115', name: 'LAILA NAJWA SAUSAN' },
-            { nis: '1079', name: 'MARITZA ZAHIRA ARTHARIAN' },
-            { nis: '1088', name: 'MUHAMMAD ALDY ARSYAD' },
-            { nis: '1071', name: 'MUHAMMAD ALFARIZI' },
-            { nis: '1122', name: 'MUHAMMAD ALTHAF AZZAHWAN' },
-            { nis: '1077', name: 'MUHAMMAD ARKAN' },
-            { nis: '1102', name: 'MUHAMMAD AZKA' },
-            { nis: '1119', name: 'MUHAMMAD FAIZ ZAKARIA' },
-            { nis: '1110', name: 'MUHAMMAD FATHIR FAHRIZAL' },
-            { nis: '1066', name: 'MUHAMMAD FAHREZI PUTRA PAMUNGKAS' },
-            { nis: '1081', name: 'MUHAMMAD FIKRI SYAH PUTRA' },
-            { nis: '1068', name: 'MUHAMMAD HAFIDZ AFIFI' },
-            { nis: '1091', name: 'MUHAMMAD HAMDAN NURSYAHBANI' },
-            { nis: '1073', name: 'MUHAMMAD NAUFAL' },
-            { nis: '1083', name: 'MUHAMMAD RAFIQI' },
-            { nis: '1103', name: 'MUHAMMAD RAFISYAH ALMUBARAK' },
-            { nis: '1072', name: 'MUHAMMAD RAFI KHALIS' },
-            { nis: '1114', name: 'MUHAMMAD RASYID' },
-            { nis: '1094', name: 'MUHAMMAD ZULFIKAR AZKA PRATAMA' },
-            { nis: '1089', name: 'NADHIRA E GA PUTRI FARDANA' },
-            { nis: '1080', name: 'NAILAH SALSABILA AZZAHRA' },
-            { nis: '1111', name: 'NAJWA AURELIA PUTRI' },
-            { nis: '1101', name: 'NAYLA HANIYYA' },
-            { nis: '1082', name: 'NEZHA AQILLA' },
-            { nis: '1078', name: 'NUR MUHAMMAD ALAMSYAH' },
-            { nis: '1123', name: 'OKY PRABOWO' },
-            { nis: '1062', name: 'RAIHAN GADING SATRIA' },
-            { nis: '1106', name: 'MUHAMMAD ZHAFRAN MAULANA' },
-            { nis: '1087', name: 'NADHIRA EGA PUTRI FARDANA' },
-            { nis: '1084', name: 'NABILA PUTRI ADIYANTO' },
-            { nis: '1092', name: 'MUHAMMAD AHZA DANISH FAHREZA' },
+            { nis: '1077', name: 'AISYAH ZHAFIRA WARDOYO' },
+            { nis: '1232', name: 'ALMIRA AINUN NISA' },
+            { nis: '1081', name: 'AQUEENZA AQILA WIDIANTO' },
+            { nis: '1121', name: 'ARKANA GHAISANI NUGRAHA' },
+            { nis: '1070', name: 'ARRAZKA RAQILA ADITYA' },
+            { nis: '1117', name: 'AUDREY ARSYILA MEDDINIA' },
+            { nis: '1234', name: 'AZZAHRA NUHA ZULFIKAR' },
+            { nis: '1118', name: 'BHAGAVAD SVARGA NUSVANTARRA YAHYA' },
+            { nis: '1067', name: 'CAKRA DIRGA PUTRA PRADANA' },
+            { nis: '1138', name: 'DIANDRA QUEENZAFIRA' },
+            { nis: '1110', name: 'ERVINO RIZKY PRATAMA' },
+            { nis: '1136', name: 'ISLAH JAYDEN KURNIAWAN' },
+            { nis: '1101', name: 'JASMINE KALILA PRASETIO' },
+            { nis: '1127', name: 'JIBRIL SAFERAGIC YEWERS' },
+            { nis: '1112', name: 'KAMIL AHSAN APRILIO' },
+            { nis: '1128', name: 'KHANSA ARIESANDY KALANI' },
+            { nis: '1085', name: 'MARIA HALIMAH FEFTAWIJAYA' },
+            { nis: '1062', name: 'MUHAMMAD AZKA AUFFA ABBID ARDANI' },
+            { nis: '1123', name: 'MUHAMMAD FARIH IRSYAD' },
+            { nis: '1071', name: 'MUHAMMAD GIBRAN ALIFIANDRA' },
+            { nis: '1111', name: 'MUHAMMAD HAFIZH FATHAN ANDRIPUTRA' },
+            { nis: '1086', name: 'OSEI BYRULAKEY MUHARDY' },
+            { nis: '1088', name: 'R.P. MALIQ AUFAA RAMADHAN' },
+            { nis: '1072', name: 'SANDY NUR ALBA RAHARDIAN' },
+            { nis: '1093', name: 'ZAFRAN AL BAIHAQI' },
+            { nis: '1134', name: 'AHMAD HAFIZH AZHAR' },
+            { nis: '1137', name: 'ANINDHITA AZ-ZAHRA PRASETYO' },
+            { nis: '1076', name: 'AQMAR ZAHID PUTRA SUDIRO' },
+            { nis: '1079', name: 'ARDHANI HABIBIE PUTRA BASKARA' },
+            { nis: '1095', name: 'ARSHYLA KHEIRA RAMADHANI' },
+            { nis: '1115', name: 'ASADELLA HANANIA ALTHAF' },
+            { nis: '1130', name: 'AUDIA KIRANA MAHARDIAN' },
+            { nis: '1133', name: 'AZALEA AURA SABRINA' },
+            { nis: '1113', name: 'AZALEA RUMAISHA DZAHIN' },
+            { nis: '1090', name: 'BILAL ABDULLAH' },
+            { nis: '1066', name: 'DAYANA SHAFIRA NUR AININA' },
+            { nis: '1097', name: 'FAQUINNA AZKIYA IZZ ZARA' },
+            { nis: '1129', name: 'GHAISAN GHAZI AL FATIH' },
+            { nis: '1141', name: 'IBRA GHAISAN CALIEF' },
+            { nis: '1135', name: 'KA\'EO ANINDITO RAMADHAN' },
+            { nis: '1105', name: 'KANI ADIA RESPATI' },
+            { nis: '1102', name: 'KENZIE AZKA BIMATAMA' },
+            { nis: '1139', name: 'MOH FATHURRAHMAN ALWAFI' },
+            { nis: '1099', name: 'MUHAMMAD ABRISAM HAFIZH' },
+            { nis: '1098', name: 'MUHAMMAD ESHAN AL HAITSAM' },
+            { nis: '1094', name: 'MUHAMMAD ILYAS SYA\'BAN' },
+            { nis: '1140', name: 'MUHAMMAD ZAFRAN NASRULLAH' },
+            { nis: '1114', name: 'RAFANDA MYESHA PUTRI HIDAYAT' },
+            { nis: '1078', name: 'SALSABILA PUTRI AISYAH MAHARDHIKA' },
+            { nis: '1147', name: 'SALWANABILA SAKHI JEHAN ALESHA' },
+            { nis: '1089', name: 'SHANUM SHAHIA ARTA' },
+            { nis: '1084', name: 'ZAFRAN HAFIZH PRADANA' },
+            { nis: '1082', name: 'ZAFRAN MAULANA ABDUSSALAM ALGHAZALI' },
+            { nis: '1103', name: 'ZHAFRINA KHIARA JASMINE' },
+            { nis: '1080', name: 'AHMAD IRHAM KHAWARIZMI' },
+            { nis: '1131', name: 'AISYAH JAUHARA NUR ZAHRANI' },
+            { nis: '1068', name: 'ALJABAR AQUILANI NOVIAN' },
+            { nis: '1132', name: 'ANINDITA INAS DZAFIRA AZAMI' },
+            { nis: '1061', name: 'AQILA QUEENSHA AROFAH' },
+            { nis: '1083', name: 'ARSYILA KHAIRINA NIRWASITA AZNII' },
+            { nis: '1075', name: 'ASHILA ZAHRO ANDIPUTRI' },
+            { nis: '1065', name: 'AZKA DZAKI AL RACHMAN' },
+            { nis: '1116', name: 'JAVED ZEKI AL TSABIT' },
+            { nis: '1091', name: 'KAYLA IZDIHAAR KHAIRUNNISA' },
+            { nis: '1152', name: 'KHAIRAN ALKALIFI HALIM' },
+            { nis: '1240', name: 'KHALIF NOUVOTISHAM KURNIAWAN' },
+            { nis: '1073', name: 'KHALILUNA AZMYA NUGRAHA' },
+            { nis: '1060', name: 'KIANDRA ZEVANNA ARSY' },
             { nis: '1124', name: 'KIRANA HANANIA ZULFARIYANTO' },
+            { nis: '1092', name: 'MUHAMMAD AHZA DANISH FAHREZA' },
             { nis: '1104', name: 'MUHAMMAD AZHAR AFANDI' },
             { nis: '1125', name: 'MUHAMMAD KEEFANO AL-FATIH PRATAMA' },
             { nis: '1074', name: 'MUHAMMAD RIFQI FAHREZI' },
             { nis: '1064', name: 'MUHAMMAD SAIF' },
-            { nis: '1130', name: 'SYAKIRA ADISTY' },
-            { nis: '1060', name: 'KIANDRA ZEVANNA ARSY' }
+            { nis: '1106', name: 'MUHAMMAD ZHAFRAN MAULANA' },
+            { nis: '1087', name: 'NADHIRA EGA PUTRI FARDANA' },
+            { nis: '1108', name: 'NAYAKA HEIDI MAHESWARI' },
+            { nis: '1122', name: 'NAYLA AYUNINDYA' },
+            { nis: '1063', name: 'QISYA NAUFALIN FIKRIA RABBANI' },
+            { nis: '1109', name: 'RAFFASYA HISYAM PRASAJA' },
+            { nis: '1059', name: 'REVALINA ASYARANI RAMADHANI' },
+            { nis: '1151', name: 'TALIYATUZ ZAKIYYA EL-HARTANTO' },
+            { nis: '1096', name: 'THALIA NAURA SYAQUEENA' }
         ];
 
-        // Data nilai formatif dan sumatif berdasarkan NIS
         const grades = {
-            '1120': { formatif: [95, 100, 100, 100], sumatif: [100] },
-            '1100': { formatif: [100, 75, 100, 75], sumatif: [98] },
-            '1126': { formatif: [100, 95, 100, 100], sumatif: [100] },
-            '1069': { formatif: [90, 80, 85, 80], sumatif: [94] },
-            '1128': { formatif: [95, 100, 90, 80], sumatif: [98] },
-            '1085': { formatif: [90, 95, 90, 80], sumatif: [98] },
-            '1127': { formatif: [80, 85, 90, 75], sumatif: [88] },
-            '1097': { formatif: [100, 90, 100, 95], sumatif: [98] },
-            '1105': { formatif: [80, 85, 95, 90], sumatif: [88] },
-            '1067': { formatif: [100, 100, 100, 95], sumatif: [100] },
-            '1093': { formatif: [90, 90, 85, 85], sumatif: [96] },
-            '1099': { formatif: [85, 80, 85, 75], sumatif: [88] },
-            '1063': { formatif: [95, 95, 90, 85], sumatif: [98] },
-            '1116': { formatif: [100, 95, 100, 95], sumatif: [100] },
-            '1133': { formatif: [95, 80, 90, 80], sumatif: [96] },
-            '1095': { formatif: [85, 80, 90, 80], sumatif: [94] },
-            '1070': { formatif: [90, 85, 100, 85], sumatif: [96] },
-            '1098': { formatif: [95, 90, 100, 90], sumatif: [98] },
-            '1065': { formatif: [95, 80, 90, 80], sumatif: [96] },
-            '1117': { formatif: [100, 90, 95, 85], sumatif: [98] },
-            '1121': { formatif: [90, 85, 90, 80], sumatif: [96] },
-            '1109': { formatif: [85, 80, 85, 80], sumatif: [94] },
-            '1112': { formatif: [90, 95, 100, 90], sumatif: [98] },
-            '1086': { formatif: [95, 90, 95, 80], sumatif: [98] },
-            '1108': { formatif: [90, 95, 90, 85], sumatif: [96] },
-            '1076': { formatif: [95, 90, 95, 80], sumatif: [98] },
-            '1090': { formatif: [100, 95, 100, 100], sumatif: [100] },
-            '1118': { formatif: [90, 95, 90, 85], sumatif: [96] },
-            '1107': { formatif: [100, 100, 100, 100], sumatif: [100] },
-            '1113': { formatif: [90, 85, 95, 80], sumatif: [96] },
-            '1096': { formatif: [95, 90, 100, 90], sumatif: [98] },
-            '1075': { formatif: [85, 80, 85, 80], sumatif: [94] },
-            '1115': { formatif: [95, 95, 100, 95], sumatif: [100] },
-            '1079': { formatif: [100, 90, 100, 90], sumatif: [98] },
-            '1088': { formatif: [90, 85, 90, 85], sumatif: [96] },
-            '1071': { formatif: [95, 90, 90, 85], sumatif: [98] },
-            '1122': { formatif: [100, 95, 100, 95], sumatif: [100] },
-            '1077': { formatif: [95, 90, 95, 85], sumatif: [98] },
-            '1102': { formatif: [100, 90, 100, 90], sumatif: [98] },
-            '1119': { formatif: [95, 95, 100, 90], sumatif: [100] },
-            '1110': { formatif: [90, 85, 90, 85], sumatif: [96] },
-            '1066': { formatif: [85, 80, 95, 85], sumatif: [94] },
-            '1081': { formatif: [90, 95, 90, 80], sumatif: [96] },
-            '1068': { formatif: [95, 80, 90, 80], sumatif: [96] },
-            '1091': { formatif: [100, 90, 100, 100], sumatif: [100] },
-            '1073': { formatif: [85, 80, 90, 80], sumatif: [94] },
-            '1083': { formatif: [95, 90, 100, 90], sumatif: [98] },
-            '1103': { formatif: [100, 95, 100, 90], sumatif: [100] },
-            '1072': { formatif: [95, 95, 100, 95], sumatif: [100] },
-            '1114': { formatif: [90, 85, 90, 80], sumatif: [96] },
-            '1094': { formatif: [85, 80, 85, 75], sumatif: [94] },
-            '1089': { formatif: [100, 95, 100, 95], sumatif: [100] },
-            '1080': { formatif: [90, 85, 90, 85], sumatif: [96] },
-            '1111': { formatif: [100, 95, 100, 90], sumatif: [100] },
-            '1101': { formatif: [90, 85, 90, 85], sumatif: [96] },
-            '1082': { formatif: [95, 90, 100, 95], sumatif: [98] },
-            '1078': { formatif: [85, 80, 90, 75], sumatif: [93] },
-            '1123': { formatif: [90, 85, 90, 80], sumatif: [96] },
-            '1062': { formatif: [100, 95, 100, 90], sumatif: [98] },
-            '1106': { formatif: [100, 90, 100, 100], sumatif: [100] },
-            '1087': { formatif: [100, 95, 100, 95], sumatif: [100] },
-            '1084': { formatif: [100, 90, 100, 90], sumatif: [98] },
-            '1092': { formatif: [95, 85, 90, 85], sumatif: [98] },
-            '1124': { formatif: [80, 80, 100, 75], sumatif: [93] },
-            '1104': { formatif: [80, 95, 90, 75], sumatif: [88] },
-            '1125': { formatif: [100, 100, 100, 100], sumatif: [100] },
-            '1074': { formatif: [90, 85, 100, 85], sumatif: [96] },
-            '1064': { formatif: [95, 90, 90, 85], sumatif: [98] },
-            '1130': { formatif: [95, 90, 90, 85], sumatif: [96] },
-            '1060': { formatif: [100, 100, 100, 100], sumatif: [96] }
+            '1120': [95, 100, 100, 100, 95],
+            '1100': [100, 75, 100, 75, 100],
+            '1126': [100, 95, 100, 100, 100],
+            '1069': [95, 95, 100, 95, 95],
+            '1077': [95, 100, 100, 95, 95],
+            '1232': [100, 100, 100, 100, 100],
+            '1081': [95, 100, 100, 90, 90],
+            '1121': [100, 100, 100, 100, 100],
+            '1070': [100, 85, 100, 100, 100],
+            '1117': [90, 85, 95, 90, 90],
+            '1234': [100, 100, 100, 100, 100],
+            '1118': [100, 90, 100, 95, 100],
+            '1067': [100, 100, 100, 100, 100],
+            '1138': [100, 100, 100, 100, 100],
+            '1110': [95, 100, 100, 100, 100],
+            '1136': [100, 100, 100, 100, 100],
+            '1101': [100, 100, 100, 90, 90],
+            '1127': [100, 100, 100, 100, 100],
+            '1112': [90, 100, 100, 95, 90],
+            '1128': [100, 100, 100, 100, 100],
+            '1085': [100, 100, 95, 100, 100],
+            '1062': [100, 95, 100, 100, 100],
+            '1123': [95, 95, 100, 100, 90],
+            '1071': [100, 100, 100, 100, 100],
+            '1111': [100, 90, 100, 90, 100],
+            '1086': [100, 90, 100, 85, 90],
+            '1088': [100, 100, 100, 100, 100],
+            '1072': [100, 100, 100, 100, 100],
+            '1093': [95, 90, 100, 85, 90],
+            '1134': [100, 85, 90, 90, 85],
+            '1137': [100, 90, 100, 100, 100],
+            '1076': [100, 90, 95, 95, 100],
+            '1079': [90, 90, 100, 85, 90],
+            '1095': [100, 100, 100, 100, 100],
+            '1115': [100, 100, 100, 100, 100],
+            '1130': [100, 100, 100, 100, 100],
+            '1133': [100, 100, 100, 100, 100],
+            '1113': [90, 90, 100, 90, 90],
+            '1090': [95, 90, 100, 95, 95],
+            '1066': [100, 100, 100, 100, 100],
+            '1097': [100, 100, 100, 100, 100],
+            '1129': [90, 90, 100, 95, 90],
+            '1141': [90, 90, 100, 100, 95],
+            '1135': [90, 85, 100, 100, 95],
+            '1105': [100, 85, 95, 100, 100],
+            '1102': [95, 80, 95, 75, 85],
+            '1139': [100, 100, 100, 100, 100],
+            '1099': [95, 95, 100, 95, 90],
+            '1098': [95, 100, 100, 100, 100],
+            '1094': [80, 85, 85, 90, 85],
+            '1140': [100, 90, 100, 95, 95],
+            '1114': [100, 100, 95, 95, 100],
+            '1078': [100, 95, 100, 95, 95],
+            '1147': [100, 95, 100, 95, 90],
+            '1089': [95, 95, 100, 90, 90],
+            '1084': [100, 100, 100, 95, 95],
+            '1082': [100, 90, 100, 100, 90],
+            '1103': [95, 95, 100, 100, 95],
+            '1080': [100, 95, 100, 90, 95],
+            '1131': [85, 75, 80, 75, 85],
+            '1068': [80, 80, 75, 75, 80],
+            '1132': [80, 80, 80, 75, 80],
+            '1061': [100, 100, 100, 90, 90],
+            '1083': [100, 80, 95, 85, 85],
+            '1075': [100, 90, 100, 80, 80],
+            '1065': [100, 90, 100, 100, 100],
+            '1116': [95, 90, 85, 75, 85],
+            '1091': [90, 85, 80, 75, 85],
+            '1152': [90, 80, 80, 75, 80],
+            '1240': [100, 90, 100, 90, 100],
+            '1073': [100, 100, 100, 100, 100],
+            '1060': [100, 100, 100, 100, 100],
+            '1124': [80, 80, 100, 75, 80],
+            '1092': [95, 85, 90, 85, 90],
+            '1104': [80, 95, 90, 75, 80],
+            '1125': [100, 100, 100, 100, 100],
+            '1074': [90, 85, 100, 85, 90],
+            '1064': [85, 80, 85, 75, 80],
+            '1106': [100, 90, 100, 100, 95],
+            '1087': [100, 100, 100, 100, 100],
+            '1108': [80, 80, 100, 75, 80],
+            '1122': [100, 85, 100, 100, 95],
+            '1063': [100, 90, 100, 80, 90],
+            '1109': [100, 85, 90, 90, 90],
+            '1059': [100, 85, 75, 75, 80],
+            '1151': [100, 100, 100, 75, 90],
+            '1096': [100, 100, 100, 100, 100]
         };
 
-        const topics = [
+        const subjects = [
             'Membaca dan Menulis Bilangan',
             'Nilai Angka dan Nilai Tempat Bilangan',
             'Komposisi dan Dekomposisi Bilangan',
-            'Membandingkan dan Mengurutkan Bilangan'
+            'Membandingkan dan Mengurutkan Bilangan',
+            'Penjumlahan dan Pengurangan Bilangan Cacah'
         ];
 
-        // --- Elemen DOM ---
+        // --- DOM Elements ---
         const nisnInput = document.getElementById('nisnInput');
         const nameDisplay = document.getElementById('nameDisplay');
         const lihatNilaiBtn = document.getElementById('lihatNilaiBtn');
@@ -292,85 +325,63 @@
         const homeBtn = document.getElementById('homeBtn');
         const customAlert = document.getElementById('customAlert');
 
-        // --- Fungsi Utama ---
+        // --- Functions ---
         function searchStudent() {
             const nisn = nisnInput.value.trim();
+            const student = students.find(s => s.nis === nisn);
+            
             if (nisn === '') {
-                showCustomAlert('NISN tidak boleh kosong.');
+                showCustomAlert('NISN tidak boleh kosong!');
                 return;
             }
 
-            const student = students.find(s => s.nis === nisn);
             if (student) {
-                // Menampilkan nama siswa di form pencarian
                 nameDisplay.value = student.name;
-
-                // Mengganti teks tombol dan menonaktifkan untuk mencegah pencarian duplikat
-                lihatNilaiBtn.textContent = 'Mencari...';
-                lihatNilaiBtn.disabled = true;
-
-                // Menunggu sebentar sebelum beralih tampilan
-                setTimeout(() => {
-                    displayGrades(student.nis, student.name);
-                    lihatNilaiBtn.textContent = 'Lihat Nilai';
-                    lihatNilaiBtn.disabled = false;
-                }, 500);
-
-            } else {
-                showCustomAlert('Data siswa tidak ditemukan.');
-                nameDisplay.value = '';
-            }
-        }
-
-        function displayGrades(nis, name) {
-            const studentGrades = grades[nis];
-            if (studentGrades) {
-                // Menampilkan nama siswa di halaman nilai
-                studentNameCode.textContent = `${name} (${nis})`;
+                lihatNilaiBtn.textContent = 'Lihat Nilai';
+                lihatNilaiBtn.disabled = false;
                 
-                // Menyembunyikan form pencarian dan menampilkan tampilan nilai
+                // Show grades view
                 searchForm.classList.add('hidden');
                 gradesView.classList.remove('hidden');
+                studentNameCode.textContent = `${student.name} (${student.nis})`;
+                
+                displayGrades(nisn);
 
-                generateGradeTable(studentGrades);
             } else {
-                showCustomAlert('Tidak ada nilai untuk siswa ini.');
-                // Kembali ke tampilan pencarian jika data tidak ditemukan
-                resetToSearch();
+                nameDisplay.value = 'Siswa tidak ditemukan';
+                lihatNilaiBtn.textContent = 'Lihat Nilai';
+                lihatNilaiBtn.disabled = false;
+                showCustomAlert('Siswa tidak ditemukan!');
             }
         }
 
-        function generateGradeTable(studentGrades) {
-            const formatifValues = studentGrades.formatif;
-            const sumatifValue = studentGrades.sumatif[0];
-            const hasFormatif = formatifValues && formatifValues.length > 0;
+        function displayGrades(nisn) {
+            const gradeData = grades[nisn];
+            let tableHTML = '';
 
-            let tableHTML = `
-                <table class="grade-table">
-                    <thead>
-                        <tr>
-                            <th colspan="${hasFormatif ? formatifValues.length : 1}">Formatif</th>
-                            <th>Sumatif</th>
-                        </tr>
-                        <tr class="description-row">
-                            ${topics.map(topic => `<td>${topic}</td>`).join('')}
-                            <td>Bilangan Cacah 1</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            ${formatifValues.map(grade => `<td>${grade}</td>`).join('')}
-                            <td>${sumatifValue}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            `;
-
-            if (!hasFormatif) {
-                gradeTableContainer.innerHTML = '<p class="text-gray-500 mt-4">Tidak ada nilai untuk siswa ini.</p>';
+            if (gradeData) {
+                tableHTML = `
+                    <table class="grade-table">
+                        <thead>
+                            <tr>
+                                <th class="w-1/2">Jenis Asesmen</th>
+                                <th class="w-1/2">Nilai</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${subjects.map((subject, index) => `
+                                <tr>
+                                    <td>${subject}</td>
+                                    <td>${gradeData[index]}</td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+                `;
             } else {
-                gradeTableContainer.innerHTML = tableHTML;
+                tableHTML = '<p class="text-gray-500 text-center mt-4">Belum ada nilai untuk siswa ini.</p>';
             }
+            gradeTableContainer.innerHTML = tableHTML;
         }
 
         function showCustomAlert(message) {
@@ -408,6 +419,5 @@
         backBtn.addEventListener('click', resetToSearch);
         homeBtn.addEventListener('click', resetToSearch);
     </script>
-
 </body>
 </html>
