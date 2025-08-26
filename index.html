@@ -89,7 +89,7 @@
         <!-- Form Pencarian -->
         <div id="search-form">
             <h1 class="text-2xl font-bold text-gray-800 mb-6">Akses Nilai Siswa</h1>
-            <input type="text" id="nisnInput" placeholder="NISN" class="block w-full mb-4">
+            <input type="text" id="nisInput" placeholder="NIS" class="block w-full mb-4">
             <input type="text" id="nameDisplay" placeholder="Nama Siswa" class="block w-full mb-6 bg-gray-100 cursor-default" readonly>
             <button id="lihatNilaiBtn" class="lihat-nilai-btn w-full">
                 Lihat Nilai
@@ -314,7 +314,7 @@
         ];
 
         // --- DOM Elements ---
-        const nisnInput = document.getElementById('nisnInput');
+        const nisInput = document.getElementById('nisInput');
         const nameDisplay = document.getElementById('nameDisplay');
         const lihatNilaiBtn = document.getElementById('lihatNilaiBtn');
         const searchForm = document.getElementById('search-form');
@@ -327,11 +327,11 @@
 
         // --- Functions ---
         function searchStudent() {
-            const nisn = nisnInput.value.trim();
-            const student = students.find(s => s.nis === nisn);
+            const nis = nisInput.value.trim();
+            const student = students.find(s => s.nis === nis);
             
-            if (nisn === '') {
-                showCustomAlert('NISN tidak boleh kosong!');
+            if (nis === '') {
+                showCustomAlert('NIS tidak boleh kosong!');
                 return;
             }
 
@@ -345,7 +345,7 @@
                 gradesView.classList.remove('hidden');
                 studentNameCode.textContent = `${student.name} (${student.nis})`;
                 
-                displayGrades(nisn);
+                displayGrades(nis);
 
             } else {
                 nameDisplay.value = 'Siswa tidak ditemukan';
@@ -355,8 +355,8 @@
             }
         }
 
-        function displayGrades(nisn) {
-            const gradeData = grades[nisn];
+        function displayGrades(nis) {
+            const gradeData = grades[nis];
             let tableHTML = '';
 
             if (gradeData) {
@@ -400,18 +400,18 @@
         function resetToSearch() {
             searchForm.classList.remove('hidden');
             gradesView.classList.add('hidden');
-            nisnInput.value = '';
+            nisInput.value = '';
             nameDisplay.value = '';
         }
 
         // --- Event Listeners ---
         lihatNilaiBtn.addEventListener('click', searchStudent);
-        nisnInput.addEventListener('input', () => {
+        nisInput.addEventListener('input', () => {
             nameDisplay.value = '';
             lihatNilaiBtn.textContent = 'Lihat Nilai';
             lihatNilaiBtn.disabled = false;
         });
-        nisnInput.addEventListener('keypress', (e) => {
+        nisInput.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') {
                 searchStudent();
             }
